@@ -11,7 +11,10 @@ const App = () => (
         if (typeof(Worker) !== "undefined") {
           const webWorker = new Worker("./worker.js")
           webWorker.addEventListener("message", (event) => {
-            if(event.data === "Done!") webWorker.terminate()
+            if(event.data === "Done!") {
+              console.log("yay,done")
+              webWorker.terminate()
+            }
           })
         } else console.error("can't use WebWorkers: browser too old?");
       }}/>
