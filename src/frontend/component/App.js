@@ -7,7 +7,7 @@ const App = () => (
   <div>
     <PurpleAppBar />
     <section style={{ padding: 20 }}>
-      <SuccessButton label='Start Web Worker' primary raised onclick={() => {
+      <SuccessButton label='Start Web Worker' primary raised onClick={() => {
         if (typeof(Worker) !== "undefined") {
           const webWorker = new Worker("./worker.js")
           webWorker.addEventListener("message", (event) => {
